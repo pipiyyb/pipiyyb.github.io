@@ -1,0 +1,19 @@
+/* Here is your custom css styles. */
+
+/* 首页 Banner 固定高度，不再全屏 */
+.index-cover {
+    height: 420px !important;
+}
+
+/* 去掉 Banner 彩虹流光动画 */
+.bg-cover:after {
+    -webkit-animation: none !important;
+    animation: none !important;
+}
+
+/* 全站 Banner（顶部横幅）统一为牛仔布纹理平铺 */
+.bg-cover {
+    background-image: url(/medias/denim.webp) !important;
+    background-repeat: repeat !important;
+    background-size: auto !important;
+}

